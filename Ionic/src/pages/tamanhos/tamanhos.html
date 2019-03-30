@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>tamanhos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-list>
+      <button ion-item *ngFor="let tamanho of listaTamanhos" (click)="obterSabores(tamanho)">
+        {{ tamanho.name }}
+      </button>
+    </ion-list>
+  </ion-list>
+
+  <ion-list *ngIf="listaSabores.length > 0">
+    <h3>Sabores</h3>
+    <ion-item *ngFor="let sabor of listaSabores" (click)="habilitarBotao()">
+      {{ sabor.sabor }}
+      <ion-note item-end>
+          R$ {{ sabor.preco }}
+      </ion-note>
+    </ion-item>
+  </ion-list>
+  <button ion-button expand="block" (click)="dadosEntrega()" [disabled]="!mostraBotao">Dados de entrega</button>
+</ion-content>

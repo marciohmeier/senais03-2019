@@ -1,0 +1,56 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>dadosEntrega</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+
+    <ion-label>Cidade</ion-label>
+    <ion-select [(ngModel)]="cidadeId" (ionChange)="carregarBairros()">
+      <ion-option *ngFor="let cidade of listaCidades" [value]="cidade.id">{{ cidade.name }}</ion-option>
+    </ion-select>
+
+  </ion-item>
+
+  <ion-item *ngIf="listaBairros.length > 0">
+
+    <ion-label>Bairro</ion-label>
+    <ion-select [(ngModel)]="nomeBairro">
+      <ion-option *ngFor="let bairro of listaBairros" [value]="bairro.name">{{ bairro.name }}</ion-option>
+    </ion-select>
+
+  </ion-item>
+
+  <ion-list *ngIf="cidadeId && nomeBairro">
+
+    <ion-item>
+      <ion-label floating>Rua</ion-label>
+      <ion-input type="text" [(ngModel)]="rua"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Número</ion-label>
+      <ion-input type="text" [(ngModel)]="numero"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Complemento</ion-label>
+      <ion-input type="text" [(ngModel)]="complemento"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Referencia</ion-label>
+      <ion-input type="text" [(ngModel)]="referencia"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button expand="block" (click)="resetarCampos()">Limpar</button>
+
+</ion-content>
