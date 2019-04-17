@@ -21,6 +21,8 @@ import {Messages} from '../providers/messages';
 import {Toasted} from '../providers/toast';
 import { LocalizacaoProvider } from '../providers/localizacao';
 import { DadosEntregaPage } from '../pages/dados-entrega/dados-entrega';
+import { CadastroPage } from '../pages/cadastro/cadastro';
+import { CadastroProvider } from '../providers/cadastro';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { DadosEntregaPage } from '../pages/dados-entrega/dados-entrega';
     ListPage,
     LoginPage,
     TamanhosPage,
-    DadosEntregaPage
+    DadosEntregaPage,
+    CadastroPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { DadosEntregaPage } from '../pages/dados-entrega/dados-entrega';
     ListPage,
     LoginPage,
     TamanhosPage,
-    DadosEntregaPage
+    DadosEntregaPage,
+    CadastroPage
   ],
   providers: [
     StatusBar,
@@ -55,7 +59,8 @@ import { DadosEntregaPage } from '../pages/dados-entrega/dados-entrega';
     TamanhosProvider,
     SaboresProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LocalizacaoProvider
+    LocalizacaoProvider,
+    CadastroProvider
   ]
 })
 export class AppModule {}

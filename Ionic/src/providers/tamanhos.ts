@@ -14,7 +14,7 @@ export class TamanhosProvider {
   }
   public tamanhos(){
     
-    this.httpProvider.url = 'http://104.196.102.231/tamanhos';
+    this.httpProvider.url = 'http://localhost:3000/tamanhos';
     return this.httpProvider.get();
   }
 }

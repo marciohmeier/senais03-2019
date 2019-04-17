@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Toasted } from '../../providers/toast';
 import { LoginProvider } from '../../providers/login';
+import { CadastroPage } from '../cadastro/cadastro';
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -30,4 +31,9 @@ export class LoginPage {
       }
     )
   };
+
+  cadastro(){
+    this.navCtrl.setRoot(CadastroPage);
+  }
+
 }

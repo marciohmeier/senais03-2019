@@ -16,13 +16,13 @@ export class LocalizacaoProvider {
 
   public cidades(){
 
-    this.httpProvider.url = 'http://104.196.102.231/cidades';
+    this.httpProvider.url = 'http://localhost:3000/cidades';
     return this.httpProvider.get();
   }
 
   public bairros(idCidade : number){
 
-    this.httpProvider.url = 'http://104.196.102.231/bairros/'+idCidade;
+    this.httpProvider.url = 'http://localhost:3000/bairros/'+idCidade;
     return this.httpProvider.get();
   }
 }

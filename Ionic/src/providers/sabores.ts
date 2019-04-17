@@ -14,7 +14,7 @@ export class SaboresProvider {
   }
   public sabores(idTamanho : string){
 
-    this.httpProvider.url = 'http://104.196.102.231/sabores/'+idTamanho;
+    this.httpProvider.url = 'http://localhost:3000/sabores/'+idTamanho;
     return this.httpProvider.get();
   }
 }
