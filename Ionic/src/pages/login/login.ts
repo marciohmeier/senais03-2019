@@ -33,7 +33,7 @@ export class LoginPage {
   };
 
   cadastro(){
-    this.navCtrl.setRoot(CadastroPage);
+    this.navCtrl.push(CadastroPage);
   }
 
 }

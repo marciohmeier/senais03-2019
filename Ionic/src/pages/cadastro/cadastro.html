@@ -13,21 +13,21 @@
 </ion-header>
 <ion-content>
 <ion-list>
-  
+
     <ion-item>
       <ion-label floating>Username</ion-label>
       <ion-input type="text" [(ngModel)]="user"></ion-input>
     </ion-item>
-  
+
     <ion-item>
       <ion-label floating>Password</ion-label>
       <ion-input type="password" [(ngModel)]="senha"></ion-input>
     </ion-item>
-  
+
   </ion-list>
   <div padding>
     <ion-list>
-      <button ion-button color="secondary" (click)="cadastrar()">Cadastrar</button>
+      <button [disabled]="(!user || !senha)" ion-button color="primary" (click)="cadastrar()">Cadastrar</button>
     </ion-list>
 </div>
 </ion-content>

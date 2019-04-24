@@ -18,25 +18,17 @@ export class CreateAction extends Action{
     }
 
     @Post('/create')
-    public Post(){
+    public async Post(){
         this.validateData();
-        if (!this.validateUniqueUser()) {
-            this.sendError(new KernelUtils().createErrorApiObject(401, '1001', 'usuário já cadastado!'));
+
+        if (!await this.validateUniqueUser()) {
+            this.sendError(new KernelUtils().createErrorApiObject(303, '1001', 'usuário já cadastado'));
             return;
         }
 
         new MySQLFactory().getConnection().select(this.generateSQL()).subscribe(
             (data : any) => {
-                if (!data.length || data.length != 1){
-                  this.sendError(new KernelUtils().createErrorApiObject(401, '1001', 'Usuário e senha inválidos'));
-                  return;
-                }
-                
-                this.sendAnswer({
-                    token    : new VPUtils().generateGUID().toUpperCase(),
-                    userName : this.req.body.userName,
-                    password : this.req.body.password
-                });
+                this.sendAnswer({'isValid':true});
             },
             (error : any) => {
                 this.sendError(error);
@@ -44,17 +36,17 @@ export class CreateAction extends Action{
         );
     }
 
-    private validateUniqueUser():boolean {
+    private async validateUniqueUser():Promise<boolean> {
 
-        let isValid = false
+        var isValid = false;
 
-        this.generateSelect().subscribe(
+        await this.generateSelect().toPromise().then(
             (data : any) => {
-                if (!data.length || data.length != 1){
+                if (data.length === 0){
                     isValid = true
                 }
             }
-        );
+        )
 
         return isValid
     }

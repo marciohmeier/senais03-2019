@@ -13,7 +13,7 @@
 
     <ion-label>Cidade</ion-label>
     <ion-select [(ngModel)]="cidadeId" (ionChange)="carregarBairros()">
-      <ion-option *ngFor="let cidade of listaCidades" [value]="cidade.id">{{ cidade.name }}</ion-option>
+      <ion-option *ngFor="let cidade of listaCidades" [value]="cidade.idCidade">{{ cidade.name }}</ion-option>
     </ion-select>
 
   </ion-item>

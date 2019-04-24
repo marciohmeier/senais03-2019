@@ -38,7 +38,7 @@ export class TamanhosPage {
   }
 
   obterSabores(item) {
-    this.sabores.sabores(item.id).subscribe(
+    this.sabores.sabores(item.idTamanho).subscribe(
       (data : any) => {
         this.listaSabores = data;
         this.desabilitarBotao();

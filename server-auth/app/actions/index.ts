@@ -5,6 +5,7 @@ import {CidadesAction} from './cidades';
 import {BairrosAction} from './bairros';
 import {CategoriasAction} from './categorias';
 import {ProdutosAction} from './produtos';
+import { CreateAction } from './create';
 
 export {LogonAction};
 export {SaboresAction};
@@ -13,3 +14,4 @@ export {CidadesAction};
 export {BairrosAction};
 export {CategoriasAction};
 export {ProdutosAction};
+export {CreateAction}

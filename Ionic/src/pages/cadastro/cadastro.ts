@@ -25,9 +25,13 @@ export class CadastroPage {
         this.navCtrl.setRoot(LoginPage);
       },
       (error : any) => {
-        this.toast.presentToast("Usuário não é único!");
+        this.toast.presentToast(JSON.parse(error._body).ErrorDescription);
         console.log(error);
       }
     )
   };
+
+  logar() {
+    this.navCtrl.setRoot(LoginPage);
+  }
 }

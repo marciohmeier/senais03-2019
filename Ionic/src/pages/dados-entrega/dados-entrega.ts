@@ -46,6 +46,8 @@ export class DadosEntregaPage {
   }
 
   carregarBairros() {
+    if (this.cidadeId === null) return;
+    this.nomeBairro = '';
     this.localizacaoProvider.bairros(this.cidadeId).subscribe(
       (data : any) => {
         this.listaBairros = data;
