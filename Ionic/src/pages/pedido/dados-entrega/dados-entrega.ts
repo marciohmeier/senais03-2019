@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { LocalizacaoProvider } from '../../providers/localizacao';
+import { LocalizacaoProvider } from '../../../providers/localizacao';
 
 /**
  * Generated class for the DadosEntregaPage page.

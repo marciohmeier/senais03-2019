@@ -1,22 +1,15 @@
-import { SaboresProvider } from './../../providers/sabores';
-import { TamanhosProvider } from './../../providers/tamanhos';
+import { SaboresProvider } from './../../../providers/sabores';
+import { TamanhosProvider } from './../../../providers/tamanhos';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DadosEntregaPage } from '../dados-entrega/dados-entrega';
 
-/**
- * Generated class for the TamanhosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
-  selector: 'page-tamanhos',
-  templateUrl: 'tamanhos.html',
+  selector: 'page-pizza',
+  templateUrl: 'pizza.html',
 })
-export class TamanhosPage {
+export class PizzaPage {
 
   public listaTamanhos = [];
   public listaSabores = [];
@@ -38,7 +31,7 @@ export class TamanhosPage {
   }
 
   obterSabores(item) {
-    this.sabores.sabores(item.idTamanho).subscribe(
+    this.sabores.saboresByTamanhoId(item.idTamanho).subscribe(
       (data : any) => {
         this.listaSabores = data;
         this.desabilitarBotao();

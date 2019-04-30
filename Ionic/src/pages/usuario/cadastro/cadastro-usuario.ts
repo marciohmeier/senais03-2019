@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Toasted } from '../../providers/toast';
-import { CadastroProvider } from '../../providers/cadastro';
+import { Toasted } from '../../../providers/toast';
+import { CadastroProvider } from '../../../providers/cadastro';
 import { LoginPage } from '../login/login';
 @IonicPage()
 @Component({
-  selector: 'page-cadastro',
-  templateUrl: 'cadastro.html',
+  selector: 'page-cadastro-usuario',
+  templateUrl: 'cadastro-usuario.html',
 })
-export class CadastroPage {
+export class CadastroUsuarioPage {
 
   user:string;
   senha:string;

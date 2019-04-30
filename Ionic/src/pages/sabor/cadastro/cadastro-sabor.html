@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cadastro de Sabores</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Sabor</ion-label>
+      <ion-input type="text" [(ngModel)]="sabor" (ionBlur)="CarregarDados()" (ionFocus) = "esconderCampos()"></ion-input>
+    </ion-item>
+  </ion-list>
+
+    <ion-list>
+      <ion-item *ngFor="let tamanho of tamanhos">
+        <ion-list item-content>
+
+          <ion-item>
+            <ion-label >{{tamanho.descricaoTamanho}}</ion-label>
+            <ion-checkbox [(ngModel)]="tamanho.isChecked"></ion-checkbox>
+          </ion-item>
+
+          <ion-item *ngIf="tamanho.isChecked">
+            <ion-label>R$</ion-label>
+            <ion-input type="text" [(ngModel)]="tamanho.preco"></ion-input>
+          </ion-item>
+
+        </ion-list>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngIf="mostrarTamanhos">
+      <button ion-button color="primary" (click)="salvar()">Salvar</button>
+    </ion-list>
+
+</ion-content>

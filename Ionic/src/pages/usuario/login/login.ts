@@ -1,9 +1,12 @@
-import { TamanhosPage } from './../tamanhos/tamanhos';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Toasted } from '../../providers/toast';
-import { LoginProvider } from '../../providers/login';
-import { CadastroPage } from '../cadastro/cadastro';
+
+import { Toasted } from '../../../providers/toast';
+import { LoginProvider } from '../../../providers/login';
+import { PizzaPage } from './../../pedido/pizza/pizza';
+import { CadastroUsuarioPage } from '../cadastro/cadastro-usuario';
+import { SaborCadastroPage } from '../../sabor/cadastro/cadastro-sabor';
+
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -23,7 +26,8 @@ export class LoginPage {
   login(){
     this.logon.singIn(this.user, this.senha).subscribe(
       (data : any) => {
-        this.navCtrl.setRoot(TamanhosPage);
+        //this.navCtrl.setRoot(PizzaPage);
+        this.navCtrl.setRoot(SaborCadastroPage);        
       },
       (error : any) => {
         this.toast.presentToast("Login ou senha incorretos!");
@@ -33,7 +37,7 @@ export class LoginPage {
   };
 
   cadastro(){
-    this.navCtrl.push(CadastroPage);
+    this.navCtrl.push(CadastroUsuarioPage);
   }
 
 }

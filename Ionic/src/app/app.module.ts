@@ -1,38 +1,39 @@
-import { SaboresProvider } from './../providers/sabores';
-import { TamanhosProvider } from './../providers/tamanhos';
-
-import { HttpProvider } from './../providers/http';
-import { LoginProvider } from './../providers/login';
 import { HttpModule } from '@angular/http';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-import { LoginPage } from './../pages/login/login';
-import { TamanhosPage } from './../pages/tamanhos/tamanhos';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {Messages} from '../providers/messages';
-import {Toasted} from '../providers/toast';
-import { LocalizacaoProvider } from '../providers/localizacao';
-import { DadosEntregaPage } from '../pages/dados-entrega/dados-entrega';
-import { CadastroPage } from '../pages/cadastro/cadastro';
+
+import { MyApp } from './app.component';
+
+/* PROVIDERS */
+import { Messages } from '../providers/messages';
+import { Toasted } from '../providers/toast';
+import { SaboresProvider } from './../providers/sabores';
+import { TamanhosProvider } from './../providers/tamanhos';
+import { HttpProvider } from './../providers/http';
+import { LoginProvider } from './../providers/login';
 import { CadastroProvider } from '../providers/cadastro';
+import { LocalizacaoProvider } from '../providers/localizacao';
+
+/* PAGES */
+import { DadosEntregaPage } from '../pages/pedido/dados-entrega/dados-entrega';
+import { CadastroUsuarioPage } from '../pages/usuario/cadastro/cadastro-usuario';
+import { LoginPage } from './../pages/usuario/login/login';
+import { PizzaPage } from './../pages/pedido/pizza/pizza';
+import { SaborCadastroPage } from './../pages/sabor/cadastro/cadastro-sabor'
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    ListPage,
     LoginPage,
-    TamanhosPage,
+    PizzaPage,
     DadosEntregaPage,
-    CadastroPage
+    CadastroUsuarioPage,
+    SaborCadastroPage
   ],
   imports: [
     BrowserModule,
@@ -42,12 +43,11 @@ import { CadastroProvider } from '../providers/cadastro';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    ListPage,
     LoginPage,
-    TamanhosPage,
+    PizzaPage,
     DadosEntregaPage,
-    CadastroPage
+    CadastroUsuarioPage,
+    SaborCadastroPage
   ],
   providers: [
     StatusBar,
